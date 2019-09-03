@@ -19,7 +19,7 @@ The geolife data to evaluate our model, which contains 50 users and ready for di
   - main.py 
   - model.py # define models
   - train.py # define tools for train the model
-- /baseline #codes for baseline App2Vec 
+- /baseline #codes for baselines 
   - main.py 
   - model.py # define models
   - train.py # define tools for train the model
