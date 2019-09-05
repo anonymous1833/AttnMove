@@ -1,5 +1,5 @@
-# STtransformer
-This is the code for submission #7726 in AAAI2020 
+# AttnMove
+This is the code for submission #9808 in AAAI2020 
 
 
 ## Datasets
