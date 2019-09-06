@@ -32,8 +32,8 @@ from model_utils import TemplateTransformerDecoder
 
 print("load module sucessful")
 "map lnglat to grids and map grid to regionID, lookup "
-grid2region = json.load(open('/data1/xiatong/trajen/region_extra/region_beijing_grid2region_REID_no_less10.json'))  #GRID2REGION lookup
-region_distacne = np.load('/data1/xiatong/trajen/region_extra/region_distance_no_less10.npy') #Reigon distance lookup
+grid2region = json.load(open('../data/region_data/region_beijing_grid2region_REID_no_less10.json'))  #GRID2REGION lookup
+region_distacne = np.load('../data/region_data/region_distance_no_less10.npy') #Reigon distance lookup
 print('Shape of region distance:', region_distacne.shape)
 RN = len(region_distacne)
 lng_ld = 116.1
