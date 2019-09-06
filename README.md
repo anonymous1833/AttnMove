@@ -18,7 +18,7 @@ The geolife data to evaluate our model, which contains 40 users and ready for di
   - pos.validate.txt
   - pos.test.txt
   - pos,vocab.txt
-- /model
+- /model # AttnMove
   - main.py
   - dataset_utils.py
   - Embedder.py
