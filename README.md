@@ -8,27 +8,33 @@ The geolife data to evaluate our model, which contains 50 users and ready for di
 
 ## Requirements
 
-- Python 3.0
-- TF-1.12 
-- Keras for baseline
+- Python 3.6
+- TF-1.18
 
 ## Project Structure
 
-- /data # preprocessed  
-- /codes 
-  - main.py 
-  - model.py # define models
-  - train.py # define tools for train the model
+- /data # preprocessed
+  - pos.train.txt
+  - pos.validate.txt
+  - pos.test.txt
+  - pos,vocab.txt
+- /model
+  - main.py
+  - dataset_utils.py
+  - Embedder.py
+  - model_utils.py
+  - self_attn_hyperaram_region.py
 - /baseline #codes for baselines 
-  - main.py 
-  - model.py # define models
-  - train.py # define tools for train the model
+  - baseline.py
+  - dataset_utils.py
+  - Embedder.py
+  - model_utils.py
+  - self_attn_hyperaram_region.py
 
-## Usage
+## Usage for AttnMove
 
 ```
-python main.py --users_end 1000 --model_mode AppPreLocPreUserIdenGtr --lr_step 1 --process_name user_iden_alpha_beta --hidden_size 512 --app_encoder_size 512 --loss_beta 0.2 --loss_alpha 0.2  
+python3 main.py --one_seq_length 48 --blank_num 8 --batch_size 50 --learning_rate_strategy static --max_train_epoch 1000 --hidden_dim 64 --bleu_interval 5 --nhead 1 --nlayer 3 --test_batch_size 50 --reg_lambda 1e-2 --gpu 4 --if_mask 1 --data_dir ../data/ --if_history 1 --lr 0.001 --drop 0.3 --fb_drop 0.3 --lr_decay_rate 0.1
 ```
 
-The codes contain four network model (DeepApp, DeepApp(App), DeepApp(App+Loc), DeepApp(App+User), RNN) and baseline model (MRU, MFU, HA, Bayes). The parameter settings for these model can refer to run.sh file. 
-
+The codes contain four network model (AttnMove, AttnMove-H) and baseline model (LSTM, Bi-LSTM, DeepMove). 
